@@ -1,32 +1,25 @@
-
-const mainbox = document.getElementsByTagName("div");
+const mainbox = document.getElementsByClassName("sqrs");
 
 for (let index = 0; index < mainbox.length; index++) {
     mainbox[index].addEventListener("click", function() {
 
-        mainbox[index].innerHTML = "x";
+        if (mainbox[index].textContent === ""){ 
+            mainbox[index].innerHTML = "x";
 
-        let listaV = []
+            let listaV = [];
 
-        for (let index = 0; index < mainbox.length; index++) {
-            if (mainbox[index].textContent==="") {
-              listaV.push(index)
-                
+            for (let j = 0; j < mainbox.length; j++) {
+                if (mainbox[j].textContent==="") {
+                  listaV.push(j);
+                    
+                }  
             }
-            
-        }
-         let NumAle = Math.floor(Math.random()*listaV.length)
-         let lista = listaV[NumAle]
-         mainbox[lista].innerHTML="O"
-
-
-      
-
-
-
-
-        
-        
+            if (listaV.length>0) {
+             let NumAle = Math.floor(Math.random()*listaV.length)
+             let lista = listaV[NumAle]
+             mainbox[lista].innerHTML="O"
+         }
+        }    
     });
 }
-  
+
