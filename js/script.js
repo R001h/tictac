@@ -1,21 +1,32 @@
 
-const mainbox = document.getElementsByClassName("sqrs")
+const mainbox = document.getElementsByTagName("div");
 
 for (let index = 0; index < mainbox.length; index++) {
-    mainbox[index].addEventListener ("click", function() {
+    mainbox[index].addEventListener("click", function() {
 
-        mainbox [index].innerHTML = "x"
+        mainbox[index].innerHTML = "x";
 
-        let numAleatorio = Math.floor((Math.random()*9))
-        mainbox [numAleatorio].innerHTML = "0"
+        let listaV = []
 
-            console.log (numAleatorio);
+        for (let index = 0; index < mainbox.length; index++) {
+            if (mainbox[index].textContent==="") {
+              listaV.push(index)
+                
+            }
+            
+        }
+         let NumAle = Math.floor(Math.random()*listaV.length)
+         let lista = listaV[NumAle]
+         mainbox[lista].innerHTML="O"
 
-        } )
 
+      
+
+
+
+
+        
+        
+    });
 }
-
-
-
-/// (getRandomInt (9))
-
+  

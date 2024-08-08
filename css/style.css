@@ -5,7 +5,13 @@
     align-items: center;
     text-align: center;
 }
+.papa{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-content: center;
 
+}
 .mainbox {
    display: flex;
    flex-wrap: wrap;
