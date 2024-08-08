@@ -7,11 +7,9 @@ for (let index = 0; index < mainbox.length; index++) {
             mainbox[index].innerHTML = "x";
 
             let listaV = [];
-
             for (let j = 0; j < mainbox.length; j++) {
                 if (mainbox[j].textContent==="") {
-                  listaV.push(j);
-                    
+                  listaV.push(j);  
                 }  
             }
             if (listaV.length>0) {
