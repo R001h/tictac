@@ -12,6 +12,7 @@
     align-content: center;
 
 }
+
 .mainbox {
    display: flex;
    flex-wrap: wrap;

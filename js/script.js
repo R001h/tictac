@@ -1,23 +1,19 @@
-const mainbox = document.getElementsByClassName("sqrs");
+const mainbox = document.getElementsByClassName("sqrs"); // elementos HTML con la clase sqrs
+const marcadorX = 0; //almacenar marcador de jugador X.
+const marcadorO = 0;    //almacenar marcador de jugador o.
+const gameActivo = true; //verificaque se sobre escriba si se gano
+const playerTurn = "x";  //turno de jugador actual
 
-for (let index = 0; index < mainbox.length; index++) {
-    mainbox[index].addEventListener("click", function() {
-
-        if (mainbox[index].textContent === ""){ 
-            mainbox[index].innerHTML = "x";
-
-            let listaV = [];
-            for (let j = 0; j < mainbox.length; j++) {
-                if (mainbox[j].textContent==="") {
-                  listaV.push(j);  
-                }  
-            }
-            if (listaV.length>0) {
-             let NumAle = Math.floor(Math.random()*listaV.length)
-             let lista = listaV[NumAle]
-             mainbox[lista].innerHTML="O"
-         }
-        }    
-    });
+// funcion para el marcador en el index
+function updateScoreboard(){
+    document.getElementById("marcador_x").textContent= marcadorX;
+    
+    document.getElementById("marcador_o").textContent= marcadorO;
 }
 
+// funcion para el marcador en local storage
+function updateScore(){
+    localStorage.setItem("marcadorX",marcadorX);
+    localStorage.setItem("marcadorO",marcadorO);
+
+}
